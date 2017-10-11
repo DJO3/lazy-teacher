@@ -4,8 +4,9 @@
     * Tested on macOS High Sierra 10.13.0
 
 # Getting Started
-1. Log into https://dashboard.stripe.com/account/apikeys and get Secret key.
+1. Complete Step 1 at https://developers.google.com/drive/v3/web/quickstart/python.
 2. `git clone https://github.com/DJO3/lazy-teacher.git`
 3. `cd lazy-teacher` 
 5. `docker-compose build`
 6. `docker-compose up -d`
+7. `docker exec lazy-teacher bash -c "python lazy-teacher/drive.py --noauth_local_webserver"`
