@@ -5,8 +5,11 @@
 
 # Getting Started
 1. Complete Step 1 at https://developers.google.com/drive/v3/web/quickstart/python.
-2. `git clone https://github.com/DJO3/lazy-teacher.git`
-3. `cd lazy-teacher` 
-5. `docker-compose build`
-6. `docker-compose up -d`
-7. `docker exec lazy-teacher bash -c "python lazy-teacher/drive.py --noauth_local_webserver"`
+2. Add a folder named `Papers` to your Google Drive
+3. Add a document to the `Papers` folder containing text, e.g., Lorem Ipsum
+4. `git clone https://github.com/DJO3/lazy-teacher.git`
+5. `cd lazy-teacher` 
+6. `docker-compose build`
+7. `docker-compose up -d`
+8. PENDING STEP - INTEGRATE WEB OAUTH - CURRENTLY NEEDS TO BE VALIDATED MANUALLY
+9. `open http://localhost:5000`
