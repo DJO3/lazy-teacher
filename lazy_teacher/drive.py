@@ -1,8 +1,9 @@
-import httplib2
+"""
+Class to interface to Google Drive
+"""
 import os
-import re
-from pprint import pprint
 
+import httplib2
 from apiclient import discovery
 from oauth2client import client
 from oauth2client import tools

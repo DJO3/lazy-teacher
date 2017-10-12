@@ -11,5 +11,10 @@
 5. `cd lazy-teacher` 
 6. `docker-compose build`
 7. `docker-compose up -d`
-8. PENDING STEP - INTEGRATE WEB OAUTH - CURRENTLY NEEDS TO BE VALIDATED MANUALLY
-9. `open http://localhost:5000`
+8. `docker exec -it lazy-teacher bash`
+9. Run and complete auth setup `python setup_auth.py --noauth_local_webserver`
+10. `exit`
+11. `docker-compose restart && open http://localhost:5000`
+
+# Known Issues
+OAUTH integration is wonky, sorry! Still learning how to do it properly with a web redirect. 
