@@ -4,17 +4,15 @@
     * Tested on macOS High Sierra 10.13.0
 
 # Getting Started
-1. Complete Step 1 at https://developers.google.com/drive/v3/web/quickstart/python.
+1. Complete "Enable APIs for your project" and "Create authorization credentials" at https://developers.google.com/identity/protocols/OAuth2WebServer. **Make sure to specify the URI as `http://localhost:5000` and the redirect_uri as `http://localhost:5000/oauth2callback`.
 2. Add a folder named `Papers` to your Google Drive
 3. Add a document to the `Papers` folder containing text, e.g., Lorem Ipsum
 4. `git clone https://github.com/DJO3/lazy-teacher.git`
 5. `cd lazy-teacher` 
-6. `docker-compose build`
-7. `docker-compose up -d`
-8. `docker exec -it lazy-teacher bash`
-9. Run and complete auth setup `python setup_auth.py --noauth_local_webserver`
-10. `exit`
-11. `docker-compose restart && open http://localhost:5000`
+6. Save client_secrets.json from Step 1 to the root of lazy-teacher directory.
+7. `docker-compose build`
+8. `docker-compose up -d`
+9. `open http://localhost:5000`
 
 # Known Issues
-OAUTH integration is wonky, sorry! Still learning how to do it properly with a web redirect. 
+1. Currently on indexes the first file found in `Papers` folder. 
