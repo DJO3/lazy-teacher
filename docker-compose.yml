@@ -1,13 +1,37 @@
 version: "3"
 services:
-  lazy-teacher:
-    env_file: .env
-    ports:
-      - 5000:5000
+  lazy-teacher-api:
     build:
-      context: ./
+      context: ./api
       dockerfile: Dockerfile
-    container_name: lazy-teacher
+    environment:
+      - DOMAIN=localhost
+    container_name: lazy-teacher-api
     volumes:
-      - ./:/usr/local/lazy-teacher
+      - ./api:/usr/local/lazy-teacher
     command: python app.py
+  lazy-teacher-gui:
+    build:
+      context: ./gui/vue
+      dockerfile: Dockerfile
+    environment:
+      - API_ENDPOINT="http://localhost/api"
+    container_name: lazy-teacher-gui
+    volumes:
+      - ./gui/vue:/usr/local/lazy-teacher
+      - /usr/local/lazy-teacher/node_modules
+    command: npm run dev
+  lazy-teacher-nginx:
+    ports:
+      - 80:80
+      - 443:443
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: lazy-teacher-nginx
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    links:
+      - lazy-teacher-api:api
+      - lazy-teacher-gui:gui
+    command: nginx -g 'daemon off;'
