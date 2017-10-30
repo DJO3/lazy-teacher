@@ -12,11 +12,10 @@ A simple project that combines a Flask API, Google Drive, Nginx, and Docker. Sca
 3. Add a document to the `Papers` folder containing text, e.g., Lorem Ipsum
 4. `git clone https://github.com/DJO3/lazy-teacher.git` and drop client_secret.json into the api folder
 5. `cd lazy-teacher` 
-6. Save client_secrets.json from Step 1 to the root of lazy-teacher directory.
-7. `docker-compose build`
-8. `docker-compose up -d`
-9. `open http://localhost/api/folders` to authenticate and grab a grade_url.
-10. Navigate to grade_url for `Papers` folder to see index of text.
+6. `docker-compose build`
+7. `docker-compose up -d`
+8. `open http://localhost/api/folders` to authenticate and grab a grade_url.
+9. Navigate to grade_url for `Papers` folder to see index of text.
 
 # Known Issues
 1. I should write a test...
